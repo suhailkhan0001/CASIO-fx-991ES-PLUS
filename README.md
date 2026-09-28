@@ -1,7 +1,7 @@
 
-# CASIO fx-991ES PLUS — Web Calculator
+# SYNORA COKE — Web Calculator
 
-A pixel-loving, browser-based recreation of the CASIO fx-991ES PLUS scientific calculator. Pure HTML, CSS, and JavaScript — no frameworks, no build step, no dependencies.
+A pixel-loving, browser-based recreation of the SYNORA COKE scientific calculator. Pure HTML, CSS, and JavaScript — no frameworks, no build step, no dependencies.
 
 🔗 **Live demo:** _add your GitHub Pages / hosting link here_
 
