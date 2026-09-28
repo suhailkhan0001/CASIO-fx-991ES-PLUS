@@ -64,10 +64,6 @@ fx991es-calculator/
 - History and theme/sound preferences persist across sessions via `localStorage`.
 - Key click sounds are generated on the fly with the Web Audio API — nothing to download.
 
-## License
-
-_Add a license of your choice (e.g. MIT) here._
-
 ## Disclaimer
 
 This is a fan-made, unofficial tribute UI inspired by the CASIO fx-991ES PLUS. CASIO and fx-991ES are trademarks of CASIO Computer Co., Ltd. This project is not affiliated with or endorsed by CASIO.
