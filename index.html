@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CASIO fx-991ES PLUS • Aesthetic Scientific Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="classic">
+  <!-- Top App Navigation / Controls -->
+  <header class="top-bar">
+    <div class="brand-title">
+      <div class="logo-mark">fx</div>
+      <span class="logo-text">CASIO fx-991ES <em>PLUS</em></span>
+    </div>
+    
+    <div class="top-actions">
+      <!-- Theme Selector -->
+      <div class="theme-picker" role="radiogroup" aria-label="Theme Selection">
+        <button type="button" class="theme-dot active" data-theme="classic" title="Classic Silver" aria-label="Classic Silver theme"></button>
+        <button type="button" class="theme-dot" data-theme="dark" title="Obsidian Stealth" aria-label="Obsidian Stealth theme"></button>
+        <button type="button" class="theme-dot" data-theme="cyber" title="Cyberpunk Neon" aria-label="Cyberpunk Neon theme"></button>
+        <button type="button" class="theme-dot" data-theme="retro" title="Vintage 80s" aria-label="Vintage 80s theme"></button>
+      </div>
+
+      <!-- Sound Toggle -->
+      <button type="button" class="icon-btn" id="soundToggleBtn" title="Toggle Key Sounds" aria-label="Toggle Key Sounds">
+        <svg id="soundIconOn" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="soundIconOff" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+
+      <!-- History Toggle -->
+      <button type="button" class="icon-btn" id="historyToggleBtn" title="Calculation History" aria-label="View Calculation History">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+      </button>
+
+      <!-- Shortcuts / Help -->
+      <button type="button" class="icon-btn" id="shortcutsBtn" title="Keyboard Shortcuts" aria-label="Keyboard Shortcuts">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+          <line x1="6" y1="8" x2="6.01" y2="8"></line>
+          <line x1="10" y1="8" x2="10.01" y2="8"></line>
+          <line x1="14" y1="8" x2="14.01" y2="8"></line>
+          <line x1="18" y1="8" x2="18.01" y2="8"></line>
+          <line x1="6" y1="12" x2="6.01" y2="12"></line>
+          <line x1="18" y1="12" x2="18.01" y2="12"></line>
+          <line x1="7" y1="16" x2="17" y2="16"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Calculator Chassis -->
+  <main class="calc-wrapper">
+    <div class="calc" id="calculator">
+      <!-- Casing Rim & Glow Highlights -->
+      <div class="casing-shine"></div>
+
+      <!-- Top Header Plate with Brand & Solar Cell -->
+      <div class="brand-plate">
+        <div class="brand-meta">
+          <span class="casio-emblem">CASIO</span>
+          <span class="model-badge">fx-991ES <em>PLUS</em></span>
+          <span class="series-tag">NATURAL-V.P.A.M.</span>
+        </div>
+
+        <div class="solar-panel" title="Photovoltaic Solar Cell (Two-Way Power)">
+          <div class="solar-stripes">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="solar-text">TWO WAY POWER</span>
+        </div>
+      </div>
+
+      <!-- Recessed LCD Screen Unit -->
+      <div class="screen-frame">
+        <div class="screen" id="screen">
+          <div class="screen-overlay"></div>
+          
+          <!-- Screen Status Indicators Bar -->
+          <div class="status" id="statusBar">
+            <span id="stShift" class="status-item">S</span>
+            <span id="stAlpha" class="status-item">A</span>
+            <span id="stHyp" class="status-item">HYP</span>
+            <span id="stDeg" class="status-item">DEG</span>
+            <span id="stRad" class="status-item">RAD</span>
+            <span id="stGrad" class="status-item">GRA</span>
+            <span id="stM" class="status-item">M</span>
+            <span class="status-item math-mode active">Math</span>
+          </div>
+
+          <!-- Formula & Expression Line -->
+          <div class="expr-container">
+            <div class="expr" id="exprDisp"></div>
+          </div>
+
+          <!-- Result Readout Line with Copy Tooltip -->
+          <div class="result-container">
+            <button type="button" class="copy-badge" id="copyResultBtn" title="Click to copy answer" aria-label="Copy result">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+            <div class="result" id="resDisp" title="Result output">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upper Function Keypad Strip -->
+      <div class="pad-row">
+        <button type="button" class="smallbtn key-shift" id="shiftBtn" onclick="toggleShift()">
+          <span class="btn-lbl">SHIFT</span>
+        </button>
+        <button type="button" class="smallbtn key-alpha" id="alphaBtn" onclick="toggleAlpha()">
+          <span class="btn-lbl">ALPHA</span>
+        </button>
+        <button type="button" class="smallbtn key-mode" onclick="cycleMode()" aria-label="Angle unit: degrees, radians, gradians">
+          <span class="btn-lbl">DRG</span>
+        </button>
+        <button type="button" class="smallbtn" onclick="doAction('M+')">
+          <span class="btn-lbl">M+</span>
+        </button>
+        <button type="button" class="smallbtn" onclick="doAction('M-')">
+          <span class="btn-lbl">M-</span>
+        </button>
+        <button type="button" class="smallbtn" onclick="doAction('MR')">
+          <span class="btn-lbl">MR</span>
+        </button>
+        <button type="button" class="smallbtn" onclick="doAction('MC')">
+          <span class="btn-lbl">MC</span>
+        </button>
+      </div>
+
+      <!-- Iconic REPLAY Oval Navigation D-Pad -->
+      <div class="navwrap">
+        <div class="replay-pad-housing">
+          <div class="replay-disc">
+            <button type="button" class="nav-btn nav-up" aria-label="Previous history entry" onclick="doAction('up')">
+              <span class="nav-arrow">▲</span>
+            </button>
+            <button type="button" class="nav-btn nav-left" aria-label="Cursor left" onclick="doAction('left')">
+              <span class="nav-arrow">◀</span>
+            </button>
+            <div class="replay-center-hub">
+              <button type="button" class="nav-center-action" onclick="keyAC()" aria-label="Clear / Replay center">
+                <span class="replay-engraved">REPLAY</span>
+              </button>
+            </div>
+            <button type="button" class="nav-btn nav-right" aria-label="Cursor right" onclick="doAction('right')">
+              <span class="nav-arrow">▶</span>
+            </button>
+            <button type="button" class="nav-btn nav-down" aria-label="Next history entry" onclick="doAction('down')">
+              <span class="nav-arrow">▼</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Function & Numerical Keypad Grid -->
+      <div class="grid" id="mainGrid"></div>
+      
+      <!-- Subtle Bottom Branding -->
+      <div class="casing-footer">
+        <span>CASIO COMPUTER CO., LTD.</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Calculation History Drawer (Slide-out panel) -->
+  <aside class="drawer" id="historyDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Calculation History</span>
+      </div>
+      <button type="button" class="drawer-close" id="closeHistoryBtn" aria-label="Close History">✕</button>
+    </div>
+    <div class="drawer-body" id="historyList">
+      <div class="empty-state">No calculations yet. Enter an expression and hit =</div>
+    </div>
+    <div class="drawer-footer">
+      <button type="button" class="btn-secondary" id="clearHistoryBtn">Clear History</button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <dialog class="modal" id="shortcutsModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Keyboard Controls</h3>
+        <button type="button" class="drawer-close" id="closeModalBtn" aria-label="Close Modal">✕</button>
+      </div>
+      <div class="modal-content">
+        <div class="shortcut-row"><kbd>0</kbd>–<kbd>9</kbd><span>Input digits</span></div>
+        <div class="shortcut-row"><kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd><span>Arithmetic operations</span></div>
+        <div class="shortcut-row"><kbd>^</kbd><span>Power exponent (xʸ)</span></div>
+        <div class="shortcut-row"><kbd>(</kbd> <kbd>)</kbd><span>Parentheses</span></div>
+        <div class="shortcut-row"><kbd>Enter</kbd> / <kbd>=</kbd><span>Calculate result</span></div>
+        <div class="shortcut-row"><kbd>Backspace</kbd><span>Delete previous token (DEL)</span></div>
+        <div class="shortcut-row"><kbd>Delete</kbd><span>Delete forward</span></div>
+        <div class="shortcut-row"><kbd>Escape</kbd><span>All Clear (AC)</span></div>
+        <div class="shortcut-row"><kbd>▲</kbd> <kbd>▼</kbd><span>Browse history calculations</span></div>
+        <div class="shortcut-row"><kbd>◀</kbd> <kbd>▶</kbd><span>Move cursor position</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Interactive Feedback Toast -->
+  <div class="toast" id="toastNotification" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
