@@ -37,7 +37,7 @@ python3 -m http.server 8000
 ## Project Structure
 
 ```
-fx991es-calculator/
+SYNORA COKE/
 ├── index.html   # Markup — calculator chassis, keypad, history drawer, shortcuts modal
 ├── style.css    # All visual styling, including the 4 themes
 └── script.js    # Calculator engine — parsing, evaluation, state, UI wiring
@@ -66,5 +66,5 @@ fx991es-calculator/
 
 ## Disclaimer
 
-This is a fan-made, unofficial tribute UI inspired by the CASIO fx-991ES PLUS. CASIO and fx-991ES are trademarks of CASIO Computer Co., Ltd. This project is not affiliated with or endorsed by CASIO.
+This is a fan-made, unofficial tribute UI inspired by the CASIO fx-991ES PLUS.
 ```
