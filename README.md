@@ -3,7 +3,7 @@
 
 A pixel-loving, browser-based recreation of the SYNORA COKE scientific calculator. Pure HTML, CSS, and JavaScript — no frameworks, no build step, no dependencies.
 
-🔗 **Live demo:** _add your GitHub Pages / hosting link here_
+🔗 **Live demo:** https://synoracoke-bysuhail.netlify.app/
 
 ## Features
 
